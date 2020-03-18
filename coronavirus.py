@@ -4,6 +4,8 @@ import scipy
 import csv
 import matplotlib.pyplot as plt
 
+CountryName = ''
+SubRegion = ''
 
 def graphingTest(myList):
     #x1 = list(range(0,len(myList)))
@@ -13,7 +15,7 @@ def graphingTest(myList):
     plt.scatter(x, myList)
     plt.xlabel('Days since 1/22/20')
     plt.ylabel('Confirmed Cases')
-    plt.title("[country name]")
+    plt.title(CountryName+', '+SubRegion)
     #plt.autoscale(enable=True, axis='y', tight=true)
     plt.show()
 
@@ -30,6 +32,8 @@ if __name__ == '__main__':
                         print('\tLocation: {}. '.format(row[1]), end= '')
                     else:
                         print('\tLocation: {}, {}'.format(row[0], row[1]), end= '')
+                    CountryName = row[1]
+                    SubRegion = row[0]
                     index = 0
                     cases_list = [] # create a list for location
                     for elem in row:
