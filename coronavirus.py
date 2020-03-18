@@ -19,15 +19,15 @@ if __name__ == '__main__':
                     if not row[0]:
                         print('\tLocation: {}. '.format(row[1]))
                     else:
-                        print('\tLocation: {}, {}'.format(row[0], row[1]))
+                        print('\tLocation: {}, {}'.format(row[0], row[1]), end = '')
                     index = 0
+                    cases_list = []
                     for elem in row:
                         if index > 3:
-                            cases_list = []
                             cases_list.append(elem)
                             #print(cases_list)
                         index += 1
-                    line_count += 1
+                    print(cases_list)
 
 
         
