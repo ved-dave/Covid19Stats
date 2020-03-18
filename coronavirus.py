@@ -6,9 +6,12 @@ import matplotlib.pyplot as plt
 
 def graphingTest(myList):
     x1 = list(range(0,len(myList)))
-    plt.plot(x1,myList)
-    plt.xlabel('Days')
-    plt.ylabel('Confirmed Victims')
+    plt.plot(x1,myList, 'ro')
+    plt.xlabel('Days since 1/22/20')
+    plt.ylabel('Confirmed Cases')
+    #plt.yscale('linear')
+    plt.title("[country name]")
+    #plt.autoscale(enable=True, axis='y', tight=true)
     plt.show()
 
 if __name__ == '__main__':
