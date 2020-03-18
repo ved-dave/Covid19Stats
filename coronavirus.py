@@ -1,6 +1,10 @@
 import numpy
 import scipy
 import csv
+import matplotlib
+
+
+
 
 
 if __name__ == '__main__':
@@ -9,12 +13,21 @@ if __name__ == '__main__':
             line_count = 0
             for row in csv_reader:
                 if line_count == 0:
-                    print('The countries/regions are {", ".join(row)}')
+                    print('The countries/regions are')
                     line_count += 1
                 else:
                     if not row[0]:
                         print('\tLocation: {}. '.format(row[1]))
                     else:
                         print('\tLocation: {}, {}'.format(row[0], row[1]))
+                    index = 0
+                    for elem in row:
+                        if index > 3:
+                            cases_list = []
+                            cases_list.append(elem)
+                            #print(cases_list)
+                        index += 1
                     line_count += 1
+
+
         
