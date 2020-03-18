@@ -1,7 +1,7 @@
 import numpy
 import scipy
 import csv
-import matplotlib
+from matplot.pyplot import*
 
 
 
