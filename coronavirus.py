@@ -17,7 +17,7 @@ if __name__ == '__main__':
                     line_count += 1
                 else:
                     if not row[0]:
-                        print('\tLocation: {}. '.format(row[1]))
+                        print('\tLocation: {}. '.format(row[1]), end = '')
                     else:
                         print('\tLocation: {}, {}'.format(row[0], row[1]), end = '')
                     index = 0
