@@ -9,8 +9,12 @@ if __name__ == '__main__':
             line_count = 0
             for row in csv_reader:
                 if line_count == 0:
-                    print('The countries/counties are {", ".join(row)}')
+                    print('The countries/regions are {", ".join(row)}')
                     line_count += 1
                 else:
-                    print('\tCountry: {}. '.format(row[1]))
+                    if not row[0]:
+                        print('\tLocation: {}. '.format(row[1]))
+                    else:
+                        print('\tLocation: {}, {}'.format(row[0], row[1]))
                     line_count += 1
+        
