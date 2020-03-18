@@ -3,21 +3,27 @@ import math
 import scipy
 import csv
 import matplotlib.pyplot as plt
+import os
 
 CountryName = ''
 SubRegion = ''
+cwd = os.getcwd()
+os.makedirs('imgsrc')
+
 
 def graphingTest(myList):
     #x1 = list(range(0,len(myList)))
-    plt.figure()
+    fig = plt.figure()
     x = list(range(0, len(myList)))
     print(max(myList))
     plt.scatter(x, myList)
     plt.xlabel('Days since 1/22/20')
     plt.ylabel('Confirmed Cases')
     plt.title(CountryName+', '+SubRegion)
-    #plt.autoscale(enable=True, axis='y', tight=true)
-    plt.show()
+    fig.savefig(cwd+'/imgsrc/'+ CountryName+'_'+SubRegion)
+    plt.close(fig)
+    
+    
 
 if __name__ == '__main__':
     with open('time_series_19-covid-Confirmed.csv') as csv_file: # load raw data from JHU
@@ -44,7 +50,3 @@ if __name__ == '__main__':
                     print(cases_list)
                     graphingTest(cases_list)
                     
-
-
-
-
